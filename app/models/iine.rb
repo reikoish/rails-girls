@@ -1,0 +1,2 @@
+class Iine < ApplicationRecord
+end

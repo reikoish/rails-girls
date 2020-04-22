@@ -1,0 +1,20 @@
+<h1>Likes#destroy</h1>
+<% if !current_user?(idea.user) %>
+    <span class="like">
+    <% if idea.iine?(current_user) %>
+      <%= form_for(idea.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+        <%= button_tag(class: "btn btn-default btn-xs") do %>
+          <%= content_tag :span, "#", class: "glyphicon glyphicon-heart" %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= form_for(idea.likes.build, remote: true) do |f| %>
+        <div><%= hidden_field_tag :idea_id, idea.id %></div>
+        <%= button_tag(class: "btn btn-default btn-xs") do %>
+          <%= content_tag :span, "#", class: "glyphicon glyphicon-heart-empty" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </span>
+<% end %>
+<p>Find me in app/views/likes/destroy.html.erb</p>
