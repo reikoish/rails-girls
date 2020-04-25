@@ -34,8 +34,9 @@
               <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
             <% end %>
           </p>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/ideas">Ideas</a></li>
+          <ul class="nav navbar-nav">  
+           <li class="active"><a href="/ideas">Ideas</a></li>
+           <li><%= link_to 'New Idea', new_idea_path %></li>
           </ul>
         </div>
       </div>

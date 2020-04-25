@@ -29,4 +29,11 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <li id="idea-<%= idea.id %>" data-idea-id="<%= idea.id %>">
+
+  <span class="timestamp">
+
+  </span>
+  <%= render "likes/like", idea: ideat %>
+　</li>
 <% end %>

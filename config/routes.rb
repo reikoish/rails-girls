@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   resources :comments
+  resources :likes, only: [:create, :destroy]
   devise_for :users
   get 'pages/info'
   root to: redirect('/ideas')
